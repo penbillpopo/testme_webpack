@@ -1,0 +1,181 @@
+
+/* ----------VARIABLES---------- */
+/*color*/
+$color-darkwhite:#fff;
+$color-palewhite:#EEF0F0;
+$color-darkgray:#393939;
+$color-palegray:#6C6C6C;
+$color-lightgray:#E0E0E0;
+$color-lightgreen:#0DB763;
+$color-normalgreen:#019049;
+$color-darkgreen:#0E6F3F;
+$color-orange:#F4AE00;
+
+
+/*font-size*/
+$font-size-01:2.85rem;
+$font-size-02:2.14rem;
+$font-size-03:1.42rem;
+$font-size-04:1.28rem;
+$font-size-05:1.1rem;
+$font-size-06:1rem;
+$font-size-07:0.85rem;
+
+
+/*letter spacing*/
+$letter-spacing-01: 0.5rem;
+$letter-spacing-02: 0.4rem;
+$letter-spacing-03: 0.3rem;
+$letter-spacing-04: 0.25rem;
+$letter-spacing-05: 0.2rem;
+$letter-spacing-06: 0.15rem;
+
+/* ----------FUNCTION---------- */
+//need to solve min font size
+@function pxTovw($px) {
+	@return $px * 100 / 1366+vw;
+}
+
+/* ----------MININ---------- */
+@mixin fontInfo($size, $color) {
+	font-size: $size;
+	color: $color;
+	line-height: $size * 1.6;
+}
+@mixin gradient_background($deg,$from_color,$to_color) {
+	background: linear-gradient($deg, $from_color 0%, $to_color 100%);
+	background: -moz-linear-gradient($deg, $from_color 0%, $to_color 100%);
+	background: -webkit-linear-gradient($deg, $from_color 0%, $to_color 100%);
+	background: -o-linear-gradient($deg, $from_color 0%, $to_color 100%);
+}
+@mixin scrollcontainer() {
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+	&::-webkit-scrollbar:vertical {
+		width: 5px;
+		background-color: $color-palewhite;
+	}
+	&::-webkit-scrollbar:horizontal {
+		height: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: #aaa;
+	}
+}
+@mixin triangle($direction,$length,$color) {
+	//sqrt(3)
+	$height:1.732 * $length;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	line-height: 0px;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+	@if($direction == 'up') {
+		border-width: 0px $length $height $length;
+		border-color: transparent transparent $color transparent;
+		_border-color: #000000 #000000 $color #000000;
+	}
+	@else if($direction == 'down') {
+		border-width: $height $length 0px $length;
+		border-color: $color transparent transparent transparent;
+		_border-color: $color #000000 #000000 #000000;
+	}
+	@else if($direction == 'left') {
+		border-width: $length $height $length 0px;
+		border-color: transparent $color transparent transparent;
+		_border-color: #000000 $color #000000 #000000;
+	}
+	@else if($direction == 'right') {
+		border-width: $length 0px $length $height;
+		border-color: transparent transparent transparent $color;
+		_border-color: #000000 #000000 #000000 $color;
+	}	
+}
+@mixin boxshadow($offsetX,$offsetY,$expand,$color) {
+	box-shadow: $offsetX $offsetY $expand $color;
+	-webkit-box-shadow: $offsetX $offsetY $expand $color;
+	-moz-box-shadow: $offsetX $offsetY $expand $color;
+}
+@mixin textdot($line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line;
+}
+
+/* ----------Extend---------- */
+/*background*/
+%background {
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+%background_100 {
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+%background_cover {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* ----------text---------- */
+h1 {
+	@include fontInfo($font-size-01, inherit);	
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+    letter-spacing: 1.2;
+}
+
+h2 {
+	@include fontInfo($font-size-02, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+	letter-spacing: 1.2;
+}
+h3 {
+	@include fontInfo($font-size-03, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+
+h4{
+	@include fontInfo($font-size-04, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+
+h5{
+	@include fontInfo($font-size-05, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+
+p,
+ul,
+li,
+div
+{
+	@include fontInfo($font-size-06, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+small{
+	display: block;
+	@include fontInfo($font-size-07, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+a,span{
+	//font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+	line-height: inherit;
+}
