@@ -18,7 +18,15 @@ $color_green_01:#28A745;
 }
 
 /* ----------MININ---------- */
+<<<<<<< HEAD
 
+=======
+@mixin fontInfo($size, $color) {
+	font-size: $size;
+	color: $color;
+	line-height: $size * 1.6;
+}
+>>>>>>> 80e1480f54495e93f3148e1106f759b722f60800
 @mixin gradient_background($deg,$from_color,$to_color) {
 	background: linear-gradient($deg, $from_color 0%, $to_color 100%);
 	background: -moz-linear-gradient($deg, $from_color 0%, $to_color 100%);
@@ -104,6 +112,7 @@ $color_green_01:#28A745;
 
 /* ----------text---------- */
 h1 {
+<<<<<<< HEAD
 	
 }
 
@@ -120,6 +129,36 @@ h4{
 
 h5{
 	
+=======
+	@include fontInfo($font-size-01, inherit);	
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+    letter-spacing: 1.2;
+}
+
+h2 {
+	@include fontInfo($font-size-02, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+	letter-spacing: 1.2;
+}
+h3 {
+	@include fontInfo($font-size-03, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+
+h4{
+	@include fontInfo($font-size-04, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+
+h5{
+	@include fontInfo($font-size-05, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+>>>>>>> 80e1480f54495e93f3148e1106f759b722f60800
 }
 
 p,
@@ -127,6 +166,7 @@ ul,
 li,
 div
 {
+<<<<<<< HEAD
 	
 }
 small{
@@ -134,6 +174,20 @@ small{
 }
 a,span{
 	
+=======
+	@include fontInfo($font-size-06, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+small{
+	display: block;
+	@include fontInfo($font-size-07, inherit);
+	//font-family: $font-famaily-robotoWeb,
+	//$font-famaily-hanWeb;
+}
+a,span{
+	//font-family: inherit;
+>>>>>>> 80e1480f54495e93f3148e1106f759b722f60800
 	font-size: inherit;
 	letter-spacing: inherit;
 	color: inherit;

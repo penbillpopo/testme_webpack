@@ -23,6 +23,7 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="scss">
 
 // #navbar{
@@ -45,3 +46,6 @@ export default {
 //     }
 // }
 </style>
+=======
+<style scoped lang="scss" src="@/assets/scss/components/navbar.scss"></style>
+>>>>>>> 80e1480f54495e93f3148e1106f759b722f60800
