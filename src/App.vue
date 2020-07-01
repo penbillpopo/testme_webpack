@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import '@/assets/scss/load.scss'
 export default {
   name: 'App',
   components: {

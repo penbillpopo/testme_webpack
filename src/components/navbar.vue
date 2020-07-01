@@ -1,6 +1,15 @@
 <template>
   <div id="navbar">
-    <h1>im navbar</h1>
+    <div class="left">
+      <div class="logo">
+        <h5 class="text">
+          TESTME
+        </h5>
+      </div>
+    </div>
+    <div class="right">
+
+    </div>
   </div>
 </template>
 
@@ -14,4 +23,25 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/navbar.scss"></style>
+<style lang="scss">
+
+// #navbar{
+//     width: 100%;
+//     padding: 0 20px;
+//     min-height: 50px;
+//     background-color: $color_grey_01;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     .left{
+//         .logo{
+//             .text{
+//                 color: $color_white_01;
+//             }
+//         }
+//     }
+//     .right{
+
+//     }
+// }
+</style>
